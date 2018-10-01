@@ -1,0 +1,11 @@
+#include<stdio.h>
+void main()
+{
+int a=5,b=10,c;
+
+if(a>b)
+  c=a;
+else
+  c=b;
+printf("Biggest number is :%d",c);
+}

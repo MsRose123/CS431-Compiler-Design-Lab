@@ -20,7 +20,7 @@ void main()
 	char ch,buffer[10];
 	int i,j,state;
 	FILE *f;
-	f=fopen("trial.txt","r");
+	f=fopen("input.txt","r");
 	if(f==NULL)
 		printf("\nError opening the file");
 	

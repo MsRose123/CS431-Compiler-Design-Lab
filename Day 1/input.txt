@@ -1,6 +1,11 @@
-int a=5,b=10;
+#include<stdio.h>
+void main()
+{
+int a=5,b=10,c;
 
-	if(a>b)
-		big=a;
-	else
-		big=b;
+if(a>b)
+  c=a;
+else
+  c=b;
+printf("Biggest number is :%d",c);
+}

@@ -1,5 +1,6 @@
 %{
 	#include<stdio.h>
+	#include<stdlib.h>
 %}
 
 %token NUM NL
@@ -9,7 +10,7 @@
 %left '(' ')'
 
 %%
-S:	E NL	{printf("Result = %d", $1);}
+S:	E NL	{printf("Result = %d", $1);exit(0);}
 E:	E '+' E	{$$ = $1 + $3;}
  |	E '-' E {$$ = $1 - $3;}
  |	E '*' E	{$$ = $1 * $3;}
@@ -25,4 +26,5 @@ void main()
 int yyerror()
 {
 	printf("Invalid\n");
+	exit(0);
 }

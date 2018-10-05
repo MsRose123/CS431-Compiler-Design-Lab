@@ -1,8 +1,12 @@
 %{
 #include<stdio.h>
+#include<stdlib.h>
 %}
 %token DIGIT LETTER
+
+
 %%
+
 stmt:A
      ;
 A: LETTER B
@@ -12,16 +16,21 @@ B: LETTER B
  | LETTER
  | DIGIT
  ;
+
+
 %%
-void main(){
+
+
+void main()
+{
 printf("enter string \n");
 yyparse();
-printf("valid");
+printf("valid\n");
 exit(0);
 }
 void yyerror()
 {
-printf("invalid");
+printf("invalid\n");
 exit(0);
 }
 

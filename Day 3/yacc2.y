@@ -1,28 +1,36 @@
 %{
-	#include<stdio.h>
+#include<stdio.h>
 %}
 
-%token NUM NL
-
+%token ID NUMBER
 %left '+' '-'
 %left '*' '/'
 %left '(' ')'
 
 %%
-S:	E NL	{printf("Valid\n");}
-E:	E '+' E	
- |	E '-' E 
- |	E '*' E	
- |	E '/' E 
- |	'(' E ')'	
- |	NUM	
- ;
+
+
+stmt:expr
+    ;
+expr: expr '+' expr
+    | expr '-' expr
+    | expr '*' expr
+    | expr '/' expr
+    | '(' expr ')'
+    | NUMBER
+    | ID
+    ;
 %%
+
 void main()
 {
-	yyparse();
+printf("enter expr : \n");
+yyparse();
+printf("valid exp\n");
+exit(0);
 }
-int yyerror()
+void yyerror()
 {
-	printf("Invalid\n");
+  printf("invalid exp\n");
+
 }
